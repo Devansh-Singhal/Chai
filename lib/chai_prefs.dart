@@ -1,3 +1,5 @@
+import 'package:chai/styled_body_text.dart';
+import 'package:chai/styled_button.dart';
 import 'package:flutter/material.dart';
 
 class ChaiPrefs extends StatefulWidget {
@@ -29,31 +31,30 @@ class _ChaiPrefsState extends State<ChaiPrefs> {
       children: [
         Row(
           children: [
-            Text('Strength:'),
-            Text('$strength'),
-            Image.asset('assets/img/strength.jpg', height: 90, width: 90),
-            const Expanded(child: SizedBox()),
-            FilledButton(
-              style: FilledButton.styleFrom(backgroundColor: Colors.brown),
-              onPressed: increaseStrength,
-              child: const Text('+'),
-            ),
+            StyledBodyText('Strength:'),
+
+              
+            for ( int i = 0; i < strength; i++)
+                Image.asset('assets/img/strength.jpg', height: 40, width: 40),
+                const Expanded(child: SizedBox()),
+                StyledButton(
+                  onPressed: increaseStrength,
+                  child: const Text('+'),
+                ),
           ],
         ),
         Row(
           children: [
-            Text('Sugar:'),
-            Text('$sugars'),
-            Image.asset('assets/img/sugar.jpg', height: 80, width: 80),
-            const Expanded(child: SizedBox()),
-            FilledButton(
-              style: FilledButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.brown[900],
-              ),
-              onPressed: increaseSugars,
-              child: const Text('+'),
-            ),
+            StyledBodyText('Sugar:'),
+            if(sugars == 0)
+                Text(' No sugar'),
+             for ( int i = 0; i < sugars; i++)
+                Image.asset('assets/img/sugar.jpg', height: 40, width: 40),
+                const Expanded(child: SizedBox()),
+                StyledButton(
+                  onPressed: increaseSugars,
+                  child: const Text('+'),
+                ),
           ],
         ),
       ],

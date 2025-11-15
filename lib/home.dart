@@ -1,4 +1,5 @@
 import 'package:chai/chai_prefs.dart';
+import 'package:chai/styled_body_text.dart';
 import 'package:flutter/material.dart';
 
 
@@ -23,9 +24,9 @@ class Home extends StatelessWidget {
         crossAxisAlignment:CrossAxisAlignment.stretch,
         children: [
           Container(
-            color: Colors.brown[400],
+            color: Colors.brown[300],
             padding: const EdgeInsets.all(30.0),
-            child: const Text('How i like my chai...'),
+            child: StyledBodyText('Customize your perfect chai!'),
           ),
           Container(
             color: Colors.brown[200],
